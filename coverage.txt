@@ -1,0 +1,66 @@
+Compiling 35 files with Solc 0.8.20
+Solc 0.8.20 finished in 3.23s
+Compiler run successful with warnings:
+Warning (2072): Unused local variable.
+  --> script/DeployDSC.s.sol:33:90:
+   |
+33 |         (address wethUsdPriceFeed, address wbtcUsdPriceFeed, address weth, address wbtc, uint256 deployerKey) =
+   |                                                                                          ^^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> test/unit/DSCEngineTest.t.sol:131:33:
+    |
+131 |         (uint256 totalNiuMinted,uint256 collateralValueMintedInUsd) = engine.getAccountInformation(USER);
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> test/unit/DSCEngineTest.t.sol:133:33:
+    |
+133 |         (uint256 totalNiuburned,uint256 collateralValueBurnedInUsd) = engine.getAccountInformation(USER);
+    |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/DSCEngine.sol:313:5:
+    |
+313 |     function getCollateralForUser(address user, address token) public returns(uint256){
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> script/HelperConfig.s.sol:52:5:
+   |
+52 |     function getSepoliaEthConfig() public returns (NetworkConfig memory sepoliaNetworkConfig) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/unit/DSCEngineTest.t.sol:74:5:
+   |
+74 |     function testGetUsdValue() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/unit/DSCEngineTest.t.sol:81:5:
+   |
+81 |     function testgetTokenAmountFromUsd() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Analysing contracts...
+Running tests...
+
+Ran 8 tests for test/unit/DSCEngineTest.t.sol:DSCEnigneTest
+[PASS] testCanDepositCollateralAndGetAccountInfo() (gas: 136135)
+[PASS] testGetUsdValue() (gas: 25263)
+[FAIL: ERC20InsufficientAllowance(0xDEb1E9a6Be7Baf84208BB6E10aC9F9bbE1D70809, 0, 100)] testMintedAndBurnedNiu() (gas: 248949)
+[PASS] testRevertWithUnapprovedCollateral() (gas: 932455)
+[PASS] testRevertsIfCollateralZero() (gas: 43354)
+[PASS] testRevertsIfTokenLengthDoesntmathcPriceFeeds() (gas: 184570)
+[PASS] testdepositCollateral() (gas: 115221)
+[PASS] testgetTokenAmountFromUsd() (gas: 25240)
+Suite result: FAILED. 7 passed; 1 failed; 0 skipped; finished in 4.97ms (6.00ms CPU time)
+
+Ran 1 test suite in 10.36ms (4.97ms CPU time): 7 tests passed, 1 failed, 0 skipped (8 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/unit/DSCEngineTest.t.sol:DSCEnigneTest
+[FAIL: ERC20InsufficientAllowance(0xDEb1E9a6Be7Baf84208BB6E10aC9F9bbE1D70809, 0, 100)] testMintedAndBurnedNiu() (gas: 248949)
+
+Encountered a total of 1 failing tests, 7 tests succeeded
