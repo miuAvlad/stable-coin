@@ -25,6 +25,7 @@ import {IERC20} from "../lib/openzeppelin-contracts/contracts/token/ERC20/IERC20
 import {AggregatorV3Interface} from
     "../lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "forge-std/console.sol";
+import {OracleLib} from "./libraries/OracleLibs.sol";
 
 /**
  * @title DSCEngine
@@ -42,6 +43,9 @@ import "forge-std/console.sol";
  * @notice This contract is verry loosely based on the MakerDAO DSS (DAI) system.
  */
 contract DSCEngine is ReentrancyGuard {
+
+    using OracleLib for AggregatorV3Interface;
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////                        STATE VARIABLES                         /////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -301,7 +305,7 @@ contract DSCEngine is ReentrancyGuard {
     function getTokenAmountFromUsd(address token, uint256 usdAmountInWei) public view returns (uint256) {
         // price of ETH
         AggregatorV3Interface priceFeed = AggregatorV3Interface(s_priceFeeds[token]);
-        (, int256 price,,,) = priceFeed.latestRoundData();
+        (, int256 price,,,) = priceFeed.staleCheckLatestRoundData();
         return (usdAmountInWei * PRECIZION) / (uint256(price) * ADDITIONAL_FEED_PRECISION);
     }
 
@@ -317,7 +321,7 @@ contract DSCEngine is ReentrancyGuard {
 
     function getUsdValue(address token, uint256 amount) public view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(s_priceFeeds[token]); // s_priceFeeds[token] e adresa de pe chainlink de la care se ia raportul ETH/USD
-        (, int256 price,,,) = priceFeed.latestRoundData();
+        (, int256 price,,,) = priceFeed.staleCheckLatestRoundData();
         // 1 ETH = $1000
         // The returned value from CL will be 1000 * 1e8
         return ((uint256(price) * ADDITIONAL_FEED_PRECISION) * amount) / PRECIZION;
@@ -343,5 +347,9 @@ contract DSCEngine is ReentrancyGuard {
 
     function getCollaateralBallanceOfUser(address user, address token) external view returns (uint256) {
         return s_collateralDeposited[user][token];
+    }
+
+   function getCollateralTokenPriceFeed(address token) external view returns (address) {
+        return s_priceFeeds[token];
     }
 }

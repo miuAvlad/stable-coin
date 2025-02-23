@@ -6,10 +6,14 @@ import {Test, console} from "forge-std/Test.sol";
 import {DSCEngine} from "../../src/DSCEngine.sol";
 import {DecentralizedStableCoin} from "../../src/DecentralizedStableCoin.sol";
 import {ERC20Mock} from "../../lib/openzeppelin-contracts/contracts/mocks/token/ERC20Mock.sol";
+import {MockV3Aggregator} from "../mocks/MockV3Aggregator.sol";
 
 contract Handler is Test {
     DSCEngine engine;
     DecentralizedStableCoin dsc;
+
+    MockV3Aggregator public ethUsdPriceFeed;
+    MockV3Aggregator public btcUsdPriceFeed;
 
     ERC20Mock weth;
     ERC20Mock wbtc;
@@ -25,6 +29,7 @@ contract Handler is Test {
         address[] memory collateralTokens = engine.getCollateralTokens();
         weth = ERC20Mock(collateralTokens[0]);
         wbtc = ERC20Mock(collateralTokens[1]);
+        ethUsdPriceFeed = MockV3Aggregator(engine.getCollateralTokenPriceFeed(address(weth)));
     }
 
     function depositCollateral(uint256 collateralSeed, uint256 amountCollateral) public {
@@ -45,7 +50,8 @@ contract Handler is Test {
     }
 
     /**
-     * @notice Reverts if amountCollateral = 0 as expected
+     * @notice Cases checked / catched
+     * Reverts if amountCollateral = 0 as expected
      * Reverts if breaks HealthFactor which is good
      * @param collateralSeed Used to calcuate address of token
      * @param amountCollateral Amount of collateral to be redeemed
@@ -71,7 +77,7 @@ contract Handler is Test {
             if (errorSelector == DSCEngine.DSCEngine__BreaksHealthFactor.selector) {
                 console.log("Error selector: ",uint32(errorSelector));
             } else {
-                revert ("Error selector neasteptat!!"); // cond da revert cu o eroare diferita arata si eroarea 
+                revert ("Error selector neasteptat!!"); // cond da revert cu o eroare diferita, arata si eroarea 
             }
         }
     }
@@ -95,6 +101,11 @@ contract Handler is Test {
         timesMintIsCalled++;
     }
 
+    // This breaks the invariant test
+    // function updateCollateralPrice(uint96 newPrice) public {
+    //     int256 newPriceInt = int256(uint256(newPrice));
+    //     ethUsdPriceFeed.updateAnswer(newPriceInt);
+    // }
     //helper functions
     function _getCollateralFromSeed(uint256 collateralSeed) private view returns (ERC20Mock) {
         if (collateralSeed % 2 == 0) {

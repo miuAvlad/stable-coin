@@ -7,3 +7,6 @@ Making a stablecoin
 3. Collateral: Exogenous (Crypto)
     1. wETH
     2. wBTC
+
+1. Invariant tests
+2. Smart Contract Audit Preparation
