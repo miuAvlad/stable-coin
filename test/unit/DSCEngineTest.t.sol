@@ -77,7 +77,7 @@ contract DSCEnigneTest is Test {
         deployer = new DeployDSC();
         (dsc, engine, config) = deployer.run();
         (ethUsdPriceFeed, btcUsdPriceFeed, weth,,) = config.activeNetworkConfig();
-
+        // console.log("Deployer has weth in balance or not :", ERC20Mock(weth).balanceOf(address(engine)));
         ERC20Mock(weth).mint(USER, 3 * STARTING_AMOUNT);
         ERC20Mock(weth).mint(SECOND_USER,  3 * STARTING_AMOUNT);
 

@@ -23,6 +23,7 @@ import {Script,console} from "forge-std/Script.sol";
 import {DecentralizedStableCoin} from "../src/DecentralizedStableCoin.sol";
 import {DSCEngine} from "../src/DSCEngine.sol";
 import {HelperConfig} from "./HelperConfig.s.sol";
+import {ERC20Mock} from "../../lib/openzeppelin-contracts/contracts/mocks/token/ERC20Mock.sol";
 
 contract DeployDSC is Script {
     address[] public tokenAddresses;
@@ -42,6 +43,8 @@ contract DeployDSC is Script {
         // puteam sa dau deploy de pe primul contract probabil in constructor pentru a nu mai apela functia asta dar asa face baiatu asta greu poate e ceva good practice, idk
         dsc.transferOwnership(address(engine)); 
         vm.stopBroadcast();
+        // console.log("Engine address: ",address(engine));
+        // console.log("DeployDSC balance: ",ERC20Mock(weth).balanceOf(address(engine)));
 
         return(dsc,engine,helperConfig);
     }

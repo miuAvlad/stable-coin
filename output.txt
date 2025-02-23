@@ -1,0 +1,984 @@
+Unable to resolve imports:
+      "../../lib/openzeppelin-contracts/contracts/mocks/token/ERC20Mock.sol" in "/home/vlad/solidity-course/foundry-stable-coin/script/DeployDSC.s.sol"
+with remappings:
+      @openzeppelin/openzeppelin-contracts/=/home/vlad/solidity-course/foundry-stable-coin/lib/openzeppelin-contracts/contracts/
+      @openzeppelin/contracts/=/home/vlad/solidity-course/foundry-stable-coin/lib/openzeppelin-contracts/contracts/
+      chainlink-brownie-contracts/=/home/vlad/solidity-course/foundry-stable-coin/lib/chainlink-brownie-contracts/
+      erc4626-tests/=/home/vlad/solidity-course/foundry-stable-coin/lib/openzeppelin-contracts/lib/erc4626-tests/
+      forge-std/=/home/vlad/solidity-course/foundry-stable-coin/lib/forge-std/src/
+      halmos-cheatcodes/=/home/vlad/solidity-course/foundry-stable-coin/lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/
+      openzeppelin-contracts/=/home/vlad/solidity-course/foundry-stable-coin/lib/openzeppelin-contracts/
+Compiling 36 files with Solc 0.8.20
+Solc 0.8.20 finished in 1.66s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+   --> src/DSCEngine.sol:336:5:
+    |
+336 |     function getCollateralForUser(address user, address token) public returns (uint256) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> script/HelperConfig.s.sol:52:5:
+   |
+52 |     function getSepoliaEthConfig() public returns (NetworkConfig memory sepoliaNetworkConfig) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for test/fuzz/Invariants.t.sol:InvariantsTest
+[FAIL: invariant_protocolMustHaveMoreValueThanTotalSupply persisted failure revert]
+	[Sequence]
+		sender=0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[32, 6006]
+		sender=0x0000000000000000000000000000000000000094 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2, 173035255670523853529672 [1.73e23]]
+		sender=0x0000000000000327AbF6809C04Aa03176E0030AC addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[144023855399471599125505 [1.44e23], 3216218 [3.216e6]]
+		sender=0x000000000000000000000000000000000000002D addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4767, 306]
+		sender=0x000000000000000004Cb2B4324Bf72582E7FC57e addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[8004238859527991939638246638 [8.004e27], 7586786036882066535266596531829494712088189910587327356296473637229 [7.586e66]]
+		sender=0x00000000000000000000000000000000b633620d addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4349, 2661]
+		sender=0x0000000000000000000000000000000000000107 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4874, 3777]
+		sender=0x000000000000000000000000000000000000001F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[30818702869398307658396513604175177735014311808401737651596132927732784044 [3.081e73], 7692483784225226866878581053547769368060082426060562072279175133 [7.692e63]]
+		sender=0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[148365832441956967243072130074421003020462097452420572960282 [1.483e59], 4560319465398022723504089383073829008242 [4.56e39]]
+		sender=0x0000000000000000000000000000000039bB6b12 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3767, 293]
+		sender=0x0000000000000000de1469131b14e8a77E5f9F72 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77], 163450590252514639165618058 [1.634e26]]
+		sender=0x0000000000000000ec11d03d48128dcDAc8B42E1 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5535, 4278]
+		sender=0x0000000000009D9944CCf9B3D91201aAb5699C7F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[18850235635554361256451803487783190 [1.885e34], 83385718732651096174344482975664375931875253409 [8.338e46]]
+		sender=0x0000000000000000A23Ecc39D122F626eDc06459 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[103537111481770999296 [1.035e20], 4141807737653 [4.141e12]]
+		sender=0x0000000000000000000000000000000000000191 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[94, 13585236411249088949538 [1.358e22]]
+		sender=0x000000000000000000000000000000000000079F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3937, 233]
+		sender=0x0000000000000000000000000000000000000A2e addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5753, 52575915 [5.257e7]]
+		sender=0x000000000000000000000000000000000000733f addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[732815113075 [7.328e11], 10540355895453899427372543300709230679931632091393728952366779511 [1.054e64]]
+		sender=0x6996933D9d41b10De90400f00E5141E3f3FD336a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[63267312222310607310220992301550539520881909915348243260808268974908359596000 [6.326e76], 519657791 [5.196e8]]
+		sender=0x000000000000000000000000000000000000018a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[1289, 1304644887 [1.304e9]]
+		sender=0xf07A99cDA979D9653c5F78723229c35268a3c30a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2285, 335]
+		sender=0x00000000000000000000000000000000000002f2 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2014489281915951665744606680589 [2.014e30], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x000000000000000000000000033C0c085A782b79 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[35848507954041908072333 [3.584e22], 181432397550597258276989063530658902462619719 [1.814e44]]
+		sender=0x0d1cb882867ff851A430e6081D90a32E50597D11 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[40854734 [4.085e7], 7914276765692844081378167898846 [7.914e30]]
+		sender=0x0000000000000000000000000000000000000e21 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5361, 1030]
+		sender=0x00000000000000000000000000000000000003De addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[1570, 1324161310598743833836268493538283093091898295570 [1.324e48]]
+		sender=0x00000000000000000000000089aDaf152F39E6aD addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[623207291977218168534252428 [6.232e26], 1736]
+		sender=0x000000000000000000000000000000000000190a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[14068875149176886633748255335104286330702054318841 [1.406e49], 78837519703583001364 [7.883e19]]
+		sender=0x000000000000000000000000000000007dC7A0d9 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[9814193600349267630680269460231821782358549903826425959 [9.814e54], 36790794911494388137860306059827998 [3.679e34]]
+		sender=0x000000000000000000000000000000000A9254e3 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[608571068301962557859736529077796977777523401184476 [6.085e50], 308213849661034004480064538017084214530350511773102694020434548970 [3.082e65]]
+		sender=0x0000000000000000000000000000000000000531 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5901726871346671921815 [5.901e21], 105916785300702842606333912832803182546976041307303544111516894370082628770 [1.059e74]]
+		sender=0x000000000000000000000000000000000001eF64 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3441, 2376452954 [2.376e9]]
+		sender=0x000000000000002678dC157526338188DFb527Dc addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[6310509368981267637144595752277887035993679283327 [6.31e48], 1204561717143558642523432609256142465677728641143264607122963 [1.204e60]]
+		sender=0x695C5ad7a06Ad61330322E906739E0206f7684A7 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mintNiu(uint256,uint256) args=[9247535584797915451057180664748820695544591120644449140157971996739901653371 [9.247e75], 5141]
+		sender=0x00000000000000000000000089aDaf152F39E6aD addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[5542, 2860]
+ invariant_protocolMustHaveMoreValueThanTotalSupply() (runs: 1, calls: 1, reverts: 1)
+Logs:
+  Bound result 6006
+  Bound result 173035255670523853529672
+  Bound result 3216218
+  Bound result 306
+  Bound result 34017381266633828430914451119
+  Bound result 2661
+  Bound result 3777
+  Bound result 28962693416610913010944880928
+  Bound result 10629033737598412630088763467
+  Bound result 293
+  Bound result 163450590252514639165618058
+  Bound result 4278
+  Bound result 25344442892321282942116351409
+  Bound result 4141807737653
+  Bound result 13585236411249088949538
+  Bound result 233
+  Bound result 52575915
+  Bound result 8955981571121925223207416296
+  Bound result 519657791
+  Bound result 1304644887
+  Bound result 335
+  Bound result 79228162514264337593543950335
+  Bound result 16730123429371014189467260849
+  Bound result 70688676780674659617316815681
+  Bound result 1030
+  Bound result 44415216271280747225801806650
+  Bound result 1736
+  Bound result 78837519703583001364
+  Bound result 9225558029011234269562515723
+  Bound result 1552366396449896585689287910
+  Bound result 78150987246050573242145808965
+  Bound result 2376452954
+  Bound result 42330505025680732151355487088
+  Bound result 1651951
+  Bound result 1123
+  maxCollateralToRedeem:  1736
+  amountCollateral:  1123
+  DSCEngine -> amountCollateral 1123
+  DSCEngine -> collateralDeposited 1736
+  Error selector:  1813788262
+  Value of weth:  431219994764123652716284486674000
+  Value of wbtc:  234784768484589851015767957788000
+  Value of total supply:  234784768484589851015767957788000
+  Times mint called:  1
+
+Traces:
+  [10942292] InvariantsTest::setUp()
+    ├─ [4218540] → new DeployDSC@0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+    │   └─ ← [Return] 20958 bytes of code
+    ├─ [4939091] DeployDSC::run()
+    │   ├─ [3124707] → new HelperConfig@0x104fBc016F4bb334D775a19E8A6510109AC63E00
+    │   │   ├─ [0] VM::startBroadcast()
+    │   │   │   └─ ← [Return] 
+    │   │   ├─ [346942] → new MockV3Aggregator@0x34A1D3fff3958843C43aD80F30b94c510645C316
+    │   │   │   └─ ← [Return] 1055 bytes of code
+    │   │   ├─ [441557] → new ERC20Mock@0x90193C961A926261B756D1E5bb255e67ff9498A1
+    │   │   │   └─ ← [Return] 1975 bytes of code
+    │   │   ├─ [46784] ERC20Mock::mint(DeployDSC: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 100000000000 [1e11])
+    │   │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: DeployDSC: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], value: 100000000000 [1e11])
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ [346942] → new MockV3Aggregator@0xBb2180ebd78ce97360503434eD37fcf4a1Df61c3
+    │   │   │   └─ ← [Return] 1055 bytes of code
+    │   │   ├─ [441557] → new ERC20Mock@0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76
+    │   │   │   └─ ← [Return] 1975 bytes of code
+    │   │   ├─ [46784] ERC20Mock::mint(DeployDSC: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 100000000000 [1e11])
+    │   │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: DeployDSC: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], value: 100000000000 [1e11])
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ [0] VM::stopBroadcast()
+    │   │   │   └─ ← [Return] 
+    │   │   └─ ← [Return] 5927 bytes of code
+    │   ├─ [911] HelperConfig::activeNetworkConfig() [staticcall]
+    │   │   └─ ← [Return] MockV3Aggregator: [0x34A1D3fff3958843C43aD80F30b94c510645C316], MockV3Aggregator: [0xBb2180ebd78ce97360503434eD37fcf4a1Df61c3], ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 77814517325470205911140941194401928579557062014761831930645393041380819009408 [7.781e76]
+    │   ├─ [0] VM::startBroadcast(<pk>)
+    │   │   └─ ← [Return] 
+    │   ├─ [580851] → new DecentralizedStableCoin@0x5FbDB2315678afecb367f032d93F642f64180aa3
+    │   │   ├─ emit OwnershipTransferred(previousOwner: 0x0000000000000000000000000000000000000000, newOwner: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266)
+    │   │   └─ ← [Return] 2557 bytes of code
+    │   ├─ [992167] → new DSCEngine@0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+    │   │   └─ ← [Return] 4277 bytes of code
+    │   ├─ [2421] DecentralizedStableCoin::transferOwnership(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512])
+    │   │   ├─ emit OwnershipTransferred(previousOwner: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266, newOwner: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512])
+    │   │   └─ ← [Stop] 
+    │   ├─ [0] VM::stopBroadcast()
+    │   │   └─ ← [Return] 
+    │   └─ ← [Return] DecentralizedStableCoin: [0x5FbDB2315678afecb367f032d93F642f64180aa3], DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], HelperConfig: [0x104fBc016F4bb334D775a19E8A6510109AC63E00]
+    ├─ [911] HelperConfig::activeNetworkConfig() [staticcall]
+    │   └─ ← [Return] MockV3Aggregator: [0x34A1D3fff3958843C43aD80F30b94c510645C316], MockV3Aggregator: [0xBb2180ebd78ce97360503434eD37fcf4a1Df61c3], ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 77814517325470205911140941194401928579557062014761831930645393041380819009408 [7.781e76]
+    ├─ [1527862] → new Handler@0x2e234DAe75C793f67A35089C9d99245E1C58470b
+    │   ├─ [1331] DSCEngine::getCollateralTokens() [staticcall]
+    │   │   └─ ← [Return] [0x90193C961A926261B756D1E5bb255e67ff9498A1, 0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76]
+    │   └─ ← [Return] 6952 bytes of code
+    └─ ← [Stop] 
+
+  [177048] Handler::depositCollateral(32, 6006)
+    ├─ [0] console::log("Bound result", 6006) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, 6006)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, value: 6006)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 6006)
+    │   ├─ emit Approval(owner: 0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 6006)
+    │   └─ ← [Return] true
+    ├─ [58614] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 6006)
+    │   ├─ emit CollateralDeposited(sender: 0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 6006)
+    │   ├─ [26054] ERC20Mock::transferFrom(0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 6006)
+    │   │   ├─ emit Transfer(from: 0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 6006)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(2, 173035255670523853529672 [1.73e23])
+    ├─ [0] console::log("Bound result", 173035255670523853529672 [1.73e23]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000094)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000094, 173035255670523853529672 [1.73e23])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000094, value: 173035255670523853529672 [1.73e23])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 173035255670523853529672 [1.73e23])
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000094, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 173035255670523853529672 [1.73e23])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 173035255670523853529672 [1.73e23])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000094, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 173035255670523853529672 [1.73e23])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000094, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 173035255670523853529672 [1.73e23])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000094, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 173035255670523853529672 [1.73e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [159949] Handler::depositCollateral(144023855399471599125505 [1.44e23], 3216218 [3.216e6])
+    ├─ [0] console::log("Bound result", 3216218 [3.216e6]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000327AbF6809C04Aa03176E0030AC)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000327AbF6809C04Aa03176E0030AC, 3216218 [3.216e6])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000327AbF6809C04Aa03176E0030AC, value: 3216218 [3.216e6])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 3216218 [3.216e6])
+    │   ├─ emit Approval(owner: 0x0000000000000327AbF6809C04Aa03176E0030AC, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 3216218 [3.216e6])
+    │   └─ ← [Return] true
+    ├─ [58614] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 3216218 [3.216e6])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000327AbF6809C04Aa03176E0030AC, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 3216218 [3.216e6])
+    │   ├─ [26054] ERC20Mock::transferFrom(0x0000000000000327AbF6809C04Aa03176E0030AC, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 3216218 [3.216e6])
+    │   │   ├─ emit Transfer(from: 0x0000000000000327AbF6809C04Aa03176E0030AC, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 3216218 [3.216e6])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(4767, 306)
+    ├─ [0] console::log("Bound result", 306) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000002D)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000002D, 306)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000002D, value: 306)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 306)
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000002D, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 306)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 306)
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000002D, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 306)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000002D, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 306)
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000002D, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 306)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(8004238859527991939638246638 [8.004e27], 7586786036882066535266596531829494712088189910587327356296473637229 [7.586e66])
+    ├─ [0] console::log("Bound result", 34017381266633828430914451119 [3.401e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000004Cb2B4324Bf72582E7FC57e)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000004Cb2B4324Bf72582E7FC57e, 34017381266633828430914451119 [3.401e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000004Cb2B4324Bf72582E7FC57e, value: 34017381266633828430914451119 [3.401e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 34017381266633828430914451119 [3.401e28])
+    │   ├─ emit Approval(owner: 0x000000000000000004Cb2B4324Bf72582E7FC57e, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 34017381266633828430914451119 [3.401e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 34017381266633828430914451119 [3.401e28])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000004Cb2B4324Bf72582E7FC57e, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 34017381266633828430914451119 [3.401e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000004Cb2B4324Bf72582E7FC57e, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 34017381266633828430914451119 [3.401e28])
+    │   │   ├─ emit Transfer(from: 0x000000000000000004Cb2B4324Bf72582E7FC57e, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 34017381266633828430914451119 [3.401e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(4349, 2661)
+    ├─ [0] console::log("Bound result", 2661) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x00000000000000000000000000000000b633620d)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x00000000000000000000000000000000b633620d, 2661)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x00000000000000000000000000000000b633620d, value: 2661)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 2661)
+    │   ├─ emit Approval(owner: 0x00000000000000000000000000000000b633620d, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 2661)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 2661)
+    │   ├─ emit CollateralDeposited(sender: 0x00000000000000000000000000000000b633620d, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 2661)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x00000000000000000000000000000000b633620d, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 2661)
+    │   │   ├─ emit Transfer(from: 0x00000000000000000000000000000000b633620d, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 2661)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(4874, 3777)
+    ├─ [0] console::log("Bound result", 3777) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000107)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000107, 3777)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000107, value: 3777)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 3777)
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000107, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 3777)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 3777)
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000107, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 3777)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000107, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 3777)
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000107, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 3777)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(30818702869398307658396513604175177735014311808401737651596132927732784044 [3.081e73], 7692483784225226866878581053547769368060082426060562072279175133 [7.692e63])
+    ├─ [0] console::log("Bound result", 28962693416610913010944880928 [2.896e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000001F)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000001F, 28962693416610913010944880928 [2.896e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000001F, value: 28962693416610913010944880928 [2.896e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 28962693416610913010944880928 [2.896e28])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000001F, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 28962693416610913010944880928 [2.896e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 28962693416610913010944880928 [2.896e28])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000001F, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 28962693416610913010944880928 [2.896e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000001F, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 28962693416610913010944880928 [2.896e28])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000001F, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 28962693416610913010944880928 [2.896e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(148365832441956967243072130074421003020462097452420572960282 [1.483e59], 4560319465398022723504089383073829008242 [4.56e39])
+    ├─ [0] console::log("Bound result", 10629033737598412630088763467 [1.062e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, 10629033737598412630088763467 [1.062e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, value: 10629033737598412630088763467 [1.062e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 10629033737598412630088763467 [1.062e28])
+    │   ├─ emit Approval(owner: 0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 10629033737598412630088763467 [1.062e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 10629033737598412630088763467 [1.062e28])
+    │   ├─ emit CollateralDeposited(sender: 0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 10629033737598412630088763467 [1.062e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 10629033737598412630088763467 [1.062e28])
+    │   │   ├─ emit Transfer(from: 0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 10629033737598412630088763467 [1.062e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(3767, 293)
+    ├─ [0] console::log("Bound result", 293) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000039bB6b12)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000039bB6b12, 293)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000039bB6b12, value: 293)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 293)
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000039bB6b12, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 293)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 293)
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000039bB6b12, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 293)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000039bB6b12, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 293)
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000039bB6b12, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 293)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77], 163450590252514639165618058 [1.634e26])
+    ├─ [0] console::log("Bound result", 163450590252514639165618058 [1.634e26]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000de1469131b14e8a77E5f9F72)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000de1469131b14e8a77E5f9F72, 163450590252514639165618058 [1.634e26])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000de1469131b14e8a77E5f9F72, value: 163450590252514639165618058 [1.634e26])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 163450590252514639165618058 [1.634e26])
+    │   ├─ emit Approval(owner: 0x0000000000000000de1469131b14e8a77E5f9F72, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 163450590252514639165618058 [1.634e26])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 163450590252514639165618058 [1.634e26])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000de1469131b14e8a77E5f9F72, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 163450590252514639165618058 [1.634e26])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000de1469131b14e8a77E5f9F72, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 163450590252514639165618058 [1.634e26])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000de1469131b14e8a77E5f9F72, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 163450590252514639165618058 [1.634e26])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(5535, 4278)
+    ├─ [0] console::log("Bound result", 4278) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000ec11d03d48128dcDAc8B42E1)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000ec11d03d48128dcDAc8B42E1, 4278)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000ec11d03d48128dcDAc8B42E1, value: 4278)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 4278)
+    │   ├─ emit Approval(owner: 0x0000000000000000ec11d03d48128dcDAc8B42E1, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 4278)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 4278)
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000ec11d03d48128dcDAc8B42E1, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 4278)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000ec11d03d48128dcDAc8B42E1, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 4278)
+    │   │   ├─ emit Transfer(from: 0x0000000000000000ec11d03d48128dcDAc8B42E1, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 4278)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(18850235635554361256451803487783190 [1.885e34], 83385718732651096174344482975664375931875253409 [8.338e46])
+    ├─ [0] console::log("Bound result", 25344442892321282942116351409 [2.534e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000009D9944CCf9B3D91201aAb5699C7F)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000009D9944CCf9B3D91201aAb5699C7F, 25344442892321282942116351409 [2.534e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000009D9944CCf9B3D91201aAb5699C7F, value: 25344442892321282942116351409 [2.534e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 25344442892321282942116351409 [2.534e28])
+    │   ├─ emit Approval(owner: 0x0000000000009D9944CCf9B3D91201aAb5699C7F, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 25344442892321282942116351409 [2.534e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 25344442892321282942116351409 [2.534e28])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000009D9944CCf9B3D91201aAb5699C7F, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 25344442892321282942116351409 [2.534e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000009D9944CCf9B3D91201aAb5699C7F, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 25344442892321282942116351409 [2.534e28])
+    │   │   ├─ emit Transfer(from: 0x0000000000009D9944CCf9B3D91201aAb5699C7F, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 25344442892321282942116351409 [2.534e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(103537111481770999296 [1.035e20], 4141807737653 [4.141e12])
+    ├─ [0] console::log("Bound result", 4141807737653 [4.141e12]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000A23Ecc39D122F626eDc06459)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000A23Ecc39D122F626eDc06459, 4141807737653 [4.141e12])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000A23Ecc39D122F626eDc06459, value: 4141807737653 [4.141e12])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 4141807737653 [4.141e12])
+    │   ├─ emit Approval(owner: 0x0000000000000000A23Ecc39D122F626eDc06459, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 4141807737653 [4.141e12])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 4141807737653 [4.141e12])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000A23Ecc39D122F626eDc06459, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 4141807737653 [4.141e12])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000A23Ecc39D122F626eDc06459, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 4141807737653 [4.141e12])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000A23Ecc39D122F626eDc06459, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 4141807737653 [4.141e12])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(94, 13585236411249088949538 [1.358e22])
+    ├─ [0] console::log("Bound result", 13585236411249088949538 [1.358e22]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000191)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000191, 13585236411249088949538 [1.358e22])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000191, value: 13585236411249088949538 [1.358e22])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 13585236411249088949538 [1.358e22])
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000191, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 13585236411249088949538 [1.358e22])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 13585236411249088949538 [1.358e22])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000191, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 13585236411249088949538 [1.358e22])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000191, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 13585236411249088949538 [1.358e22])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000191, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 13585236411249088949538 [1.358e22])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(3937, 233)
+    ├─ [0] console::log("Bound result", 233) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000079F)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000079F, 233)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000079F, value: 233)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 233)
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000079F, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 233)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 233)
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000079F, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 233)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000079F, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 233)
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000079F, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 233)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(5753, 52575915 [5.257e7])
+    ├─ [0] console::log("Bound result", 52575915 [5.257e7]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000A2e)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000A2e, 52575915 [5.257e7])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000A2e, value: 52575915 [5.257e7])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 52575915 [5.257e7])
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000A2e, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 52575915 [5.257e7])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 52575915 [5.257e7])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000A2e, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 52575915 [5.257e7])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000A2e, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 52575915 [5.257e7])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000A2e, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 52575915 [5.257e7])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143533] Handler::depositCollateral(732815113075 [7.328e11], 10540355895453899427372543300709230679931632091393728952366779511 [1.054e64])
+    ├─ [0] console::log("Bound result", 8955981571121925223207416296 [8.955e27]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000733f)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000733f, 8955981571121925223207416296 [8.955e27])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000733f, value: 8955981571121925223207416296 [8.955e27])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 8955981571121925223207416296 [8.955e27])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000733f, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 8955981571121925223207416296 [8.955e27])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 8955981571121925223207416296 [8.955e27])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000733f, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 8955981571121925223207416296 [8.955e27])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000733f, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 8955981571121925223207416296 [8.955e27])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000733f, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 8955981571121925223207416296 [8.955e27])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(63267312222310607310220992301550539520881909915348243260808268974908359596000 [6.326e76], 519657791 [5.196e8])
+    ├─ [0] console::log("Bound result", 519657791 [5.196e8]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x6996933D9d41b10De90400f00E5141E3f3FD336a)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x6996933D9d41b10De90400f00E5141E3f3FD336a, 519657791 [5.196e8])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x6996933D9d41b10De90400f00E5141E3f3FD336a, value: 519657791 [5.196e8])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 519657791 [5.196e8])
+    │   ├─ emit Approval(owner: 0x6996933D9d41b10De90400f00E5141E3f3FD336a, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 519657791 [5.196e8])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 519657791 [5.196e8])
+    │   ├─ emit CollateralDeposited(sender: 0x6996933D9d41b10De90400f00E5141E3f3FD336a, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 519657791 [5.196e8])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x6996933D9d41b10De90400f00E5141E3f3FD336a, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 519657791 [5.196e8])
+    │   │   ├─ emit Transfer(from: 0x6996933D9d41b10De90400f00E5141E3f3FD336a, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 519657791 [5.196e8])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(1289, 1304644887 [1.304e9])
+    ├─ [0] console::log("Bound result", 1304644887 [1.304e9]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000018a)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000018a, 1304644887 [1.304e9])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000018a, value: 1304644887 [1.304e9])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1304644887 [1.304e9])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000018a, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1304644887 [1.304e9])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 1304644887 [1.304e9])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000018a, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 1304644887 [1.304e9])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000018a, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1304644887 [1.304e9])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000018a, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1304644887 [1.304e9])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(2285, 335)
+    ├─ [0] console::log("Bound result", 335) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0xf07A99cDA979D9653c5F78723229c35268a3c30a)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0xf07A99cDA979D9653c5F78723229c35268a3c30a, 335)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0xf07A99cDA979D9653c5F78723229c35268a3c30a, value: 335)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 335)
+    │   ├─ emit Approval(owner: 0xf07A99cDA979D9653c5F78723229c35268a3c30a, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 335)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 335)
+    │   ├─ emit CollateralDeposited(sender: 0xf07A99cDA979D9653c5F78723229c35268a3c30a, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 335)
+    │   ├─ [8954] ERC20Mock::transferFrom(0xf07A99cDA979D9653c5F78723229c35268a3c30a, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 335)
+    │   │   ├─ emit Transfer(from: 0xf07A99cDA979D9653c5F78723229c35268a3c30a, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 335)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143417] Handler::depositCollateral(2014489281915951665744606680589 [2.014e30], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    ├─ [0] console::log("Bound result", 79228162514264337593543950335 [7.922e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x00000000000000000000000000000000000002f2)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x00000000000000000000000000000000000002f2, 79228162514264337593543950335 [7.922e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x00000000000000000000000000000000000002f2, value: 79228162514264337593543950335 [7.922e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 79228162514264337593543950335 [7.922e28])
+    │   ├─ emit Approval(owner: 0x00000000000000000000000000000000000002f2, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 79228162514264337593543950335 [7.922e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 79228162514264337593543950335 [7.922e28])
+    │   ├─ emit CollateralDeposited(sender: 0x00000000000000000000000000000000000002f2, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 79228162514264337593543950335 [7.922e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x00000000000000000000000000000000000002f2, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 79228162514264337593543950335 [7.922e28])
+    │   │   ├─ emit Transfer(from: 0x00000000000000000000000000000000000002f2, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 79228162514264337593543950335 [7.922e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143533] Handler::depositCollateral(35848507954041908072333 [3.584e22], 181432397550597258276989063530658902462619719 [1.814e44])
+    ├─ [0] console::log("Bound result", 16730123429371014189467260849 [1.673e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000033C0c085A782b79)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000033C0c085A782b79, 16730123429371014189467260849 [1.673e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000033C0c085A782b79, value: 16730123429371014189467260849 [1.673e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 16730123429371014189467260849 [1.673e28])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000033C0c085A782b79, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 16730123429371014189467260849 [1.673e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 16730123429371014189467260849 [1.673e28])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000033C0c085A782b79, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 16730123429371014189467260849 [1.673e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000033C0c085A782b79, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 16730123429371014189467260849 [1.673e28])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000033C0c085A782b79, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 16730123429371014189467260849 [1.673e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(40854734 [4.085e7], 7914276765692844081378167898846 [7.914e30])
+    ├─ [0] console::log("Bound result", 70688676780674659617316815681 [7.068e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0d1cb882867ff851A430e6081D90a32E50597D11)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0d1cb882867ff851A430e6081D90a32E50597D11, 70688676780674659617316815681 [7.068e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0d1cb882867ff851A430e6081D90a32E50597D11, value: 70688676780674659617316815681 [7.068e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 70688676780674659617316815681 [7.068e28])
+    │   ├─ emit Approval(owner: 0x0d1cb882867ff851A430e6081D90a32E50597D11, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 70688676780674659617316815681 [7.068e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 70688676780674659617316815681 [7.068e28])
+    │   ├─ emit CollateralDeposited(sender: 0x0d1cb882867ff851A430e6081D90a32E50597D11, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 70688676780674659617316815681 [7.068e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0d1cb882867ff851A430e6081D90a32E50597D11, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 70688676780674659617316815681 [7.068e28])
+    │   │   ├─ emit Transfer(from: 0x0d1cb882867ff851A430e6081D90a32E50597D11, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 70688676780674659617316815681 [7.068e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(5361, 1030)
+    ├─ [0] console::log("Bound result", 1030) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000e21)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000e21, 1030)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000e21, value: 1030)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1030)
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000e21, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1030)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 1030)
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000e21, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 1030)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000e21, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1030)
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000e21, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1030)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(1570, 1324161310598743833836268493538283093091898295570 [1.324e48])
+    ├─ [0] console::log("Bound result", 44415216271280747225801806650 [4.441e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x00000000000000000000000000000000000003De)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x00000000000000000000000000000000000003De, 44415216271280747225801806650 [4.441e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x00000000000000000000000000000000000003De, value: 44415216271280747225801806650 [4.441e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 44415216271280747225801806650 [4.441e28])
+    │   ├─ emit Approval(owner: 0x00000000000000000000000000000000000003De, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 44415216271280747225801806650 [4.441e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 44415216271280747225801806650 [4.441e28])
+    │   ├─ emit CollateralDeposited(sender: 0x00000000000000000000000000000000000003De, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 44415216271280747225801806650 [4.441e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x00000000000000000000000000000000000003De, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 44415216271280747225801806650 [4.441e28])
+    │   │   ├─ emit Transfer(from: 0x00000000000000000000000000000000000003De, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 44415216271280747225801806650 [4.441e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142848] Handler::depositCollateral(623207291977218168534252428 [6.232e26], 1736)
+    ├─ [0] console::log("Bound result", 1736) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x00000000000000000000000089aDaf152F39E6aD)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x00000000000000000000000089aDaf152F39E6aD, 1736)
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x00000000000000000000000089aDaf152F39E6aD, value: 1736)
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1736)
+    │   ├─ emit Approval(owner: 0x00000000000000000000000089aDaf152F39E6aD, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1736)
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 1736)
+    │   ├─ emit CollateralDeposited(sender: 0x00000000000000000000000089aDaf152F39E6aD, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 1736)
+    │   ├─ [8954] ERC20Mock::transferFrom(0x00000000000000000000000089aDaf152F39E6aD, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1736)
+    │   │   ├─ emit Transfer(from: 0x00000000000000000000000089aDaf152F39E6aD, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1736)
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(14068875149176886633748255335104286330702054318841 [1.406e49], 78837519703583001364 [7.883e19])
+    ├─ [0] console::log("Bound result", 78837519703583001364 [7.883e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000000190a)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000000190a, 78837519703583001364 [7.883e19])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000000190a, value: 78837519703583001364 [7.883e19])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 78837519703583001364 [7.883e19])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000000190a, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 78837519703583001364 [7.883e19])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 78837519703583001364 [7.883e19])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000000190a, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 78837519703583001364 [7.883e19])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000000190a, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 78837519703583001364 [7.883e19])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000000190a, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 78837519703583001364 [7.883e19])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143533] Handler::depositCollateral(9814193600349267630680269460231821782358549903826425959 [9.814e54], 36790794911494388137860306059827998 [3.679e34])
+    ├─ [0] console::log("Bound result", 9225558029011234269562515723 [9.225e27]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000007dC7A0d9)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000007dC7A0d9, 9225558029011234269562515723 [9.225e27])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000007dC7A0d9, value: 9225558029011234269562515723 [9.225e27])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 9225558029011234269562515723 [9.225e27])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000007dC7A0d9, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 9225558029011234269562515723 [9.225e27])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 9225558029011234269562515723 [9.225e27])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000007dC7A0d9, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 9225558029011234269562515723 [9.225e27])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000007dC7A0d9, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 9225558029011234269562515723 [9.225e27])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000007dC7A0d9, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 9225558029011234269562515723 [9.225e27])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143532] Handler::depositCollateral(608571068301962557859736529077796977777523401184476 [6.085e50], 308213849661034004480064538017084214530350511773102694020434548970 [3.082e65])
+    ├─ [0] console::log("Bound result", 1552366396449896585689287910 [1.552e27]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000A9254e3)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000A9254e3, 1552366396449896585689287910 [1.552e27])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000A9254e3, value: 1552366396449896585689287910 [1.552e27])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1552366396449896585689287910 [1.552e27])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000A9254e3, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1552366396449896585689287910 [1.552e27])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 1552366396449896585689287910 [1.552e27])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000A9254e3, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 1552366396449896585689287910 [1.552e27])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000A9254e3, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 1552366396449896585689287910 [1.552e27])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000A9254e3, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 1552366396449896585689287910 [1.552e27])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143533] Handler::depositCollateral(5901726871346671921815 [5.901e21], 105916785300702842606333912832803182546976041307303544111516894370082628770 [1.059e74])
+    ├─ [0] console::log("Bound result", 78150987246050573242145808965 [7.815e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x0000000000000000000000000000000000000531)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x0000000000000000000000000000000000000531, 78150987246050573242145808965 [7.815e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x0000000000000000000000000000000000000531, value: 78150987246050573242145808965 [7.815e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 78150987246050573242145808965 [7.815e28])
+    │   ├─ emit Approval(owner: 0x0000000000000000000000000000000000000531, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 78150987246050573242145808965 [7.815e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 78150987246050573242145808965 [7.815e28])
+    │   ├─ emit CollateralDeposited(sender: 0x0000000000000000000000000000000000000531, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 78150987246050573242145808965 [7.815e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x0000000000000000000000000000000000000531, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 78150987246050573242145808965 [7.815e28])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000531, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 78150987246050573242145808965 [7.815e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [142849] Handler::depositCollateral(3441, 2376452954 [2.376e9])
+    ├─ [0] console::log("Bound result", 2376452954 [2.376e9]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000000000000000000000000001eF64)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000000000000000000000000001eF64, 2376452954 [2.376e9])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000000000000000000000000001eF64, value: 2376452954 [2.376e9])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 2376452954 [2.376e9])
+    │   ├─ emit Approval(owner: 0x000000000000000000000000000000000001eF64, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 2376452954 [2.376e9])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 2376452954 [2.376e9])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000000000000000000000000001eF64, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 2376452954 [2.376e9])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000000000000000000000000001eF64, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 2376452954 [2.376e9])
+    │   │   ├─ emit Transfer(from: 0x000000000000000000000000000000000001eF64, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 2376452954 [2.376e9])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [143533] Handler::depositCollateral(6310509368981267637144595752277887035993679283327 [6.31e48], 1204561717143558642523432609256142465677728641143264607122963 [1.204e60])
+    ├─ [0] console::log("Bound result", 42330505025680732151355487088 [4.233e28]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::startPrank(0x000000000000002678dC157526338188DFb527Dc)
+    │   └─ ← [Return] 
+    ├─ [29684] ERC20Mock::mint(0x000000000000002678dC157526338188DFb527Dc, 42330505025680732151355487088 [4.233e28])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x000000000000002678dC157526338188DFb527Dc, value: 42330505025680732151355487088 [4.233e28])
+    │   └─ ← [Stop] 
+    ├─ [24735] ERC20Mock::approve(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 42330505025680732151355487088 [4.233e28])
+    │   ├─ emit Approval(owner: 0x000000000000002678dC157526338188DFb527Dc, spender: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 42330505025680732151355487088 [4.233e28])
+    │   └─ ← [Return] true
+    ├─ [41514] DSCEngine::depositCollateral(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 42330505025680732151355487088 [4.233e28])
+    │   ├─ emit CollateralDeposited(sender: 0x000000000000002678dC157526338188DFb527Dc, token: ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], amount: 42330505025680732151355487088 [4.233e28])
+    │   ├─ [8954] ERC20Mock::transferFrom(0x000000000000002678dC157526338188DFb527Dc, DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], 42330505025680732151355487088 [4.233e28])
+    │   │   ├─ emit Transfer(from: 0x000000000000002678dC157526338188DFb527Dc, to: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], value: 42330505025680732151355487088 [4.233e28])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [168919] Handler::mintNiu(9247535584797915451057180664748820695544591120644449140157971996739901653371 [9.247e75], 5141)
+    ├─ [43627] DSCEngine::getAccountInformation(0x00000000000000000000000089aDaf152F39E6aD) [staticcall]
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 200000000000 [2e11], 1, 1, 1
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 100000000000 [1e11], 1, 1, 1
+    │   └─ ← [Return] 0, 3472000 [3.472e6]
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 1651951 [1.651e6]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::startPrank(0x00000000000000000000000089aDaf152F39E6aD)
+    │   └─ ← [Return] 
+    ├─ [84442] DSCEngine::mintNiu(1651951 [1.651e6])
+    │   ├─ [991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 200000000000 [2e11], 1, 1, 1
+    │   ├─ [991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 100000000000 [1e11], 1, 1, 1
+    │   ├─ [49142] DecentralizedStableCoin::mint(0x00000000000000000000000089aDaf152F39E6aD, 1651951 [1.651e6])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: 0x00000000000000000000000089aDaf152F39E6aD, value: 1651951 [1.651e6])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop] 
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return] 
+    └─ ← [Stop] 
+
+  [108021] Handler::redeemCollateral(5542, 2860)
+    ├─ [2750] DSCEngine::getCollaateralBallanceOfUser(0x00000000000000000000000089aDaf152F39E6aD, ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1]) [staticcall]
+    │   └─ ← [Return] 1736
+    ├─ [0] console::log("Bound result", 1123) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] console::log("maxCollateralToRedeem: ", 1736) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("amountCollateral: ", 1123) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::prank(0x00000000000000000000000089aDaf152F39E6aD)
+    │   └─ ← [Return] 
+    ├─ [87463] DSCEngine::redeemCollateral(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 1123)
+    │   ├─ [0] console::log("DSCEngine -> amountCollateral", 1123) [staticcall]
+    │   │   └─ ← [Stop] 
+    │   ├─ [0] console::log("DSCEngine -> collateralDeposited", 1736) [staticcall]
+    │   │   └─ ← [Stop] 
+    │   ├─ emit CollateralRedeemed(redeemedFrom: 0x00000000000000000000000089aDaf152F39E6aD, redeemedTo: 0x00000000000000000000000089aDaf152F39E6aD, token: ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], amount: 1123)
+    │   ├─ [30004] ERC20Mock::transfer(0x00000000000000000000000089aDaf152F39E6aD, 1123)
+    │   │   ├─ emit Transfer(from: DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512], to: 0x00000000000000000000000089aDaf152F39E6aD, value: 1123)
+    │   │   └─ ← [Return] true
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 200000000000 [2e11], 1, 1, 1
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 100000000000 [1e11], 1, 1, 1
+    │   └─ ← [Revert] DSCEngine__BreaksHealthFactor()
+    ├─ [0] console::log("Error selector: ", 1813788262 [1.813e9]) [staticcall]
+    │   └─ ← [Stop] 
+    └─ ← [Revert] revert: Error selector neasteptat!!
+
+  [71316] InvariantsTest::invariant_protocolMustHaveMoreValueThanTotalSupply()
+    ├─ [2348] DecentralizedStableCoin::totalSupply() [staticcall]
+    │   └─ ← [Return] 1651951 [1.651e6]
+    ├─ [2559] ERC20Mock::balanceOf(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512]) [staticcall]
+    │   └─ ← [Return] 215609997382061826358142243337 [2.156e29]
+    ├─ [2559] ERC20Mock::balanceOf(DSCEngine: [0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512]) [staticcall]
+    │   └─ ← [Return] 234784768484589851015767957788 [2.347e29]
+    ├─ [15031] DSCEngine::getUsdValue(ERC20Mock: [0x90193C961A926261B756D1E5bb255e67ff9498A1], 215609997382061826358142243337 [2.156e29]) [staticcall]
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 200000000000 [2e11], 1, 1, 1
+    │   └─ ← [Return] 431219994764123652716284486674000 [4.312e32]
+    ├─ [15031] DSCEngine::getUsdValue(ERC20Mock: [0xDB8cFf278adCCF9E9b5da745B44E754fC4EE3C76], 234784768484589851015767957788 [2.347e29]) [staticcall]
+    │   ├─ [8991] MockV3Aggregator::latestRoundData() [staticcall]
+    │   │   └─ ← [Return] 1, 100000000000 [1e11], 1, 1, 1
+    │   └─ ← [Return] 234784768484589851015767957788000 [2.347e32]
+    ├─ [0] console::log("Value of weth: ", 431219994764123652716284486674000 [4.312e32]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Value of wbtc: ", 234784768484589851015767957788000 [2.347e32]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Value of total supply: ", 234784768484589851015767957788000 [2.347e32]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [2339] Handler::timesMintIsCalled() [staticcall]
+    │   └─ ← [Return] 1
+    ├─ [0] console::log("Times mint called: ", 1) [staticcall]
+    │   └─ ← [Stop] 
+    └─ ← [Stop] 
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 7.35ms (5.80ms CPU time)
+
+Ran 1 test suite in 805.36ms (7.35ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fuzz/Invariants.t.sol:InvariantsTest
+[FAIL: invariant_protocolMustHaveMoreValueThanTotalSupply persisted failure revert]
+	[Sequence]
+		sender=0x9DeFDFBBf16E9Df083920551Dc1c2e7271947F68 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[32, 6006]
+		sender=0x0000000000000000000000000000000000000094 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2, 173035255670523853529672 [1.73e23]]
+		sender=0x0000000000000327AbF6809C04Aa03176E0030AC addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[144023855399471599125505 [1.44e23], 3216218 [3.216e6]]
+		sender=0x000000000000000000000000000000000000002D addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4767, 306]
+		sender=0x000000000000000004Cb2B4324Bf72582E7FC57e addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[8004238859527991939638246638 [8.004e27], 7586786036882066535266596531829494712088189910587327356296473637229 [7.586e66]]
+		sender=0x00000000000000000000000000000000b633620d addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4349, 2661]
+		sender=0x0000000000000000000000000000000000000107 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[4874, 3777]
+		sender=0x000000000000000000000000000000000000001F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[30818702869398307658396513604175177735014311808401737651596132927732784044 [3.081e73], 7692483784225226866878581053547769368060082426060562072279175133 [7.692e63]]
+		sender=0x8082d2E7714a89E0Bd575984fdAA8938Ee49d273 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[148365832441956967243072130074421003020462097452420572960282 [1.483e59], 4560319465398022723504089383073829008242 [4.56e39]]
+		sender=0x0000000000000000000000000000000039bB6b12 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3767, 293]
+		sender=0x0000000000000000de1469131b14e8a77E5f9F72 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77], 163450590252514639165618058 [1.634e26]]
+		sender=0x0000000000000000ec11d03d48128dcDAc8B42E1 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5535, 4278]
+		sender=0x0000000000009D9944CCf9B3D91201aAb5699C7F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[18850235635554361256451803487783190 [1.885e34], 83385718732651096174344482975664375931875253409 [8.338e46]]
+		sender=0x0000000000000000A23Ecc39D122F626eDc06459 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[103537111481770999296 [1.035e20], 4141807737653 [4.141e12]]
+		sender=0x0000000000000000000000000000000000000191 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[94, 13585236411249088949538 [1.358e22]]
+		sender=0x000000000000000000000000000000000000079F addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3937, 233]
+		sender=0x0000000000000000000000000000000000000A2e addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5753, 52575915 [5.257e7]]
+		sender=0x000000000000000000000000000000000000733f addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[732815113075 [7.328e11], 10540355895453899427372543300709230679931632091393728952366779511 [1.054e64]]
+		sender=0x6996933D9d41b10De90400f00E5141E3f3FD336a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[63267312222310607310220992301550539520881909915348243260808268974908359596000 [6.326e76], 519657791 [5.196e8]]
+		sender=0x000000000000000000000000000000000000018a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[1289, 1304644887 [1.304e9]]
+		sender=0xf07A99cDA979D9653c5F78723229c35268a3c30a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2285, 335]
+		sender=0x00000000000000000000000000000000000002f2 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[2014489281915951665744606680589 [2.014e30], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x000000000000000000000000033C0c085A782b79 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[35848507954041908072333 [3.584e22], 181432397550597258276989063530658902462619719 [1.814e44]]
+		sender=0x0d1cb882867ff851A430e6081D90a32E50597D11 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[40854734 [4.085e7], 7914276765692844081378167898846 [7.914e30]]
+		sender=0x0000000000000000000000000000000000000e21 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5361, 1030]
+		sender=0x00000000000000000000000000000000000003De addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[1570, 1324161310598743833836268493538283093091898295570 [1.324e48]]
+		sender=0x00000000000000000000000089aDaf152F39E6aD addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[623207291977218168534252428 [6.232e26], 1736]
+		sender=0x000000000000000000000000000000000000190a addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[14068875149176886633748255335104286330702054318841 [1.406e49], 78837519703583001364 [7.883e19]]
+		sender=0x000000000000000000000000000000007dC7A0d9 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[9814193600349267630680269460231821782358549903826425959 [9.814e54], 36790794911494388137860306059827998 [3.679e34]]
+		sender=0x000000000000000000000000000000000A9254e3 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[608571068301962557859736529077796977777523401184476 [6.085e50], 308213849661034004480064538017084214530350511773102694020434548970 [3.082e65]]
+		sender=0x0000000000000000000000000000000000000531 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[5901726871346671921815 [5.901e21], 105916785300702842606333912832803182546976041307303544111516894370082628770 [1.059e74]]
+		sender=0x000000000000000000000000000000000001eF64 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3441, 2376452954 [2.376e9]]
+		sender=0x000000000000002678dC157526338188DFb527Dc addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[6310509368981267637144595752277887035993679283327 [6.31e48], 1204561717143558642523432609256142465677728641143264607122963 [1.204e60]]
+		sender=0x695C5ad7a06Ad61330322E906739E0206f7684A7 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mintNiu(uint256,uint256) args=[9247535584797915451057180664748820695544591120644449140157971996739901653371 [9.247e75], 5141]
+		sender=0x00000000000000000000000089aDaf152F39E6aD addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[5542, 2860]
+ invariant_protocolMustHaveMoreValueThanTotalSupply() (runs: 1, calls: 1, reverts: 1)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

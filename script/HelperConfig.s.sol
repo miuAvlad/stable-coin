@@ -19,7 +19,7 @@
  */
 pragma solidity 0.8.20;
 
-import {Script} from "forge-std/Script.sol";
+import {Script,console} from "forge-std/Script.sol";
 import {DecentralizedStableCoin} from "../src/DecentralizedStableCoin.sol";
 import {DSCEngine} from "../src/DSCEngine.sol";
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
@@ -67,11 +67,13 @@ contract HelperConfig is Script {
         vm.startBroadcast();
         MockV3Aggregator ethUsdPriceFeed = new MockV3Aggregator(DECIMALS, ETH_USD_PRICE);
         ERC20Mock wethMock = new ERC20Mock("WETH", "WETH");
-        wethMock.mint(address(this), 1000e8);
+        wethMock.mint(msg.sender, 1000e8);
+        // console.log("HelperConfig balance of engine: ",wethMock.balanceOf(msg.sender));
+        // console.log("Address: ", msg.sender);
 
         MockV3Aggregator btcUsdPriceFeed = new MockV3Aggregator(DECIMALS, BTC_USD_PRICE);
         ERC20Mock wbtcMock = new ERC20Mock("WBTC", "WBTC");
-        wbtcMock.mint(address(this), 1000e8);
+        wbtcMock.mint(msg.sender, 1000e8);
         vm.stopBroadcast();
 
         return NetworkConfig({

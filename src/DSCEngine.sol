@@ -62,7 +62,9 @@ contract DSCEngine is ReentrancyGuard {
     ///////////////////                        EVENTS                         //////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     event CollateralDeposited(address indexed sender, address indexed token, uint256 indexed amount);
-    event CollateralRedeemed(address indexed redeemedFrom,address indexed redeemedTo, address indexed token, uint256 amount);
+    event CollateralRedeemed(
+        address indexed redeemedFrom, address indexed redeemedTo, address indexed token, uint256 amount
+    );
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////                        ERRORS                         //////////////////////////////
@@ -93,8 +95,6 @@ contract DSCEngine is ReentrancyGuard {
         }
         _;
     }
-
-   
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////                        FUNCTIONS                      //////////////////////////////
@@ -169,7 +169,7 @@ contract DSCEngine is ReentrancyGuard {
         moreThanZero(amountCollateral)
         nonReentrant
     {
-        _redeemColateral(tokenCollaterlaAddress,amountCollateral, msg.sender,msg.sender);
+        _redeemColateral(tokenCollaterlaAddress, amountCollateral, msg.sender, msg.sender);
         _revertIfHealthFactorIsBroken(msg.sender);
     }
 
@@ -189,7 +189,7 @@ contract DSCEngine is ReentrancyGuard {
     }
 
     function burnNiu(uint256 amount) public moreThanZero(amount) {
-        _burnNiu(amount,msg.sender,msg.sender);
+        _burnNiu(amount, msg.sender, msg.sender);
         _revertIfHealthFactorIsBroken(msg.sender);
     }
     /**
@@ -205,22 +205,22 @@ contract DSCEngine is ReentrancyGuard {
         nonReentrant
     {
         uint256 startingUserHealthFactor = _healthFactor(user);
-        console.log("Starting HealthFactor for user 2",startingUserHealthFactor);
-       
+        // console.log("Starting HealthFactor for user 2", startingUserHealthFactor);
+
         if (startingUserHealthFactor >= MIN_HEALTH_FACTOR) {
             revert DSCEngine__HealthFactorOk();
         }
         // burn niu and take their collateral
-        uint256 tokenAmountFromDebtCovered = getTokenAmountFromUsd(collateral,debtToCover);
+        uint256 tokenAmountFromDebtCovered = getTokenAmountFromUsd(collateral, debtToCover);
         // Give liquidator 10% bonus
         uint256 bonusCollateral = (tokenAmountFromDebtCovered * LIQUIDATION_BONUS) / LIQUIDATION_PRECISION;
         uint256 totalCollateralToRedeam = tokenAmountFromDebtCovered + bonusCollateral;
         _redeemColateral(collateral, totalCollateralToRedeam, user, msg.sender);
-        _burnNiu(debtToCover,user,msg.sender);
-        
+        _burnNiu(debtToCover, user, msg.sender);
+
         uint256 endingUserHealthFactior = _healthFactor(user);
-        console.log("Ending HealthFactor for user 2",startingUserHealthFactor);
-        if (endingUserHealthFactior <= startingUserHealthFactor){
+        // console.log("Ending HealthFactor for user 2", startingUserHealthFactor);
+        if (endingUserHealthFactior <= startingUserHealthFactor) {
             revert DSCEngine__HealthFactorNotImproved();
         }
         _revertIfHealthFactorIsBroken(msg.sender);
@@ -243,21 +243,29 @@ contract DSCEngine is ReentrancyGuard {
         i_dsc.burn(amountNiuToBurn);
     }
 
-    function _redeemColateral(address tokenCollaterlaAddress, uint256 amountCollateral, address from, address to) private {
+    function _redeemColateral(address tokenCollaterlaAddress, uint256 amountCollateral, address from, address to)
+        private
+    {
         // solidity compiler pentru unsafe math
+        console.log("DSCEngine -> amountCollateral",amountCollateral);
+        console.log("DSCEngine -> collateralDeposited",s_collateralDeposited[from][tokenCollaterlaAddress]);
+
+        require(
+            s_collateralDeposited[from][tokenCollaterlaAddress] >= amountCollateral, "Insufficient collateral to redeem"
+        );
         s_collateralDeposited[from][tokenCollaterlaAddress] -= amountCollateral;
-        emit CollateralRedeemed(from, to , tokenCollaterlaAddress, amountCollateral);
+        emit CollateralRedeemed(from, to, tokenCollaterlaAddress, amountCollateral);
         bool success = IERC20(tokenCollaterlaAddress).transfer(to, amountCollateral);
         if (!success) {
             revert DSCEngine__TransferFailed();
         }
-    } 
+    }
 
     function _revertIfHealthFactorIsBroken(address user) internal view {
         uint256 userHealthFactor = _healthFactor(user);
         // console.log("user: ",user );
         // console.log("user healthfactor < ",userHealthFactor );
-        // console.log("min health factor ",MIN_HEALTH_FACTOR ); 
+        // console.log("min health factor ",MIN_HEALTH_FACTOR );
         if (userHealthFactor < MIN_HEALTH_FACTOR) {
             revert DSCEngine__BreaksHealthFactor();
         }
@@ -272,7 +280,7 @@ contract DSCEngine is ReentrancyGuard {
         // Total collateral value
         (uint256 totalNiuMinted, uint256 collateralValueInUsd) = _getAccountInformationFromUser(user);
         uint256 collateralAdjustedForThreshhold = (collateralValueInUsd * LIQUIDATION_THRESHOLD) / LIQUIDATION_PRECISION;
-        if(totalNiuMinted == 0){
+        if (totalNiuMinted == 0) {
             return type(uint256).max;
         }
         return (collateralAdjustedForThreshhold * PRECIZION) / totalNiuMinted; // ce se intampla daca total niu minted este 0
@@ -290,11 +298,11 @@ contract DSCEngine is ReentrancyGuard {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////                  PUBLIC & EXTERNAL VIEW FUNCTIONS                      ///////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
-    function getTokenAmountFromUsd(address token, uint256 usdAmountInWei)public view returns(uint256){
+    function getTokenAmountFromUsd(address token, uint256 usdAmountInWei) public view returns (uint256) {
         // price of ETH
         AggregatorV3Interface priceFeed = AggregatorV3Interface(s_priceFeeds[token]);
-        (,int256 price,,,) = priceFeed.latestRoundData();
-        return (usdAmountInWei * PRECIZION) / (uint256(price) * ADDITIONAL_FEED_PRECISION);        
+        (, int256 price,,,) = priceFeed.latestRoundData();
+        return (usdAmountInWei * PRECIZION) / (uint256(price) * ADDITIONAL_FEED_PRECISION);
     }
 
     function getAccountCollateralValue(address user) public view returns (uint256 valueInUsdOfCollateral) {
@@ -315,14 +323,25 @@ contract DSCEngine is ReentrancyGuard {
         return ((uint256(price) * ADDITIONAL_FEED_PRECISION) * amount) / PRECIZION;
     }
 
-    function getAccountInformation(address user) external view returns(uint256 totalNiuMinted, uint256 collateralValueInUsd){
-        (totalNiuMinted,collateralValueInUsd) = _getAccountInformationFromUser(user);
+    function getAccountInformation(address user)
+        external
+        view
+        returns (uint256 totalNiuMinted, uint256 collateralValueInUsd)
+    {
+        (totalNiuMinted, collateralValueInUsd) = _getAccountInformationFromUser(user);
     }
 
     // Getters
 
-    function getCollateralForUser(address user, address token) public returns(uint256){
+    function getCollateralForUser(address user, address token) public returns (uint256) {
         return s_collateralDeposited[user][token];
     }
-    
+
+    function getCollateralTokens() external view returns (address[] memory) {
+        return s_collateralTokens;
+    }
+
+    function getCollaateralBallanceOfUser(address user, address token) external view returns (uint256) {
+        return s_collateralDeposited[user][token];
+    }
 }
