@@ -26,7 +26,7 @@ import "forge-std/console.sol";
 
 /**
  * @title Decentralized Stable Coin
- * @author Miu Vlad / Patrick Collins
+ * @author 
  * Collateral: Exogenous (ETH & BTC)
  * Minting: Algorithmic
  * Relative Stability: Pegged to USD
